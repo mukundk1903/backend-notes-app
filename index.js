@@ -38,6 +38,10 @@ app.use(cors(corsOptions)); // Enable CORS for all routes
 app.get("/", (req, res) => {
     res.json({ data: "hello" });
 });
+
+app.get("/test",(req,res) => {
+    res.json({data:test});
+})
 //Create-Account
 app.post("/create-account", async (req, res) => {
     const { fullName, email, password } = req.body;
