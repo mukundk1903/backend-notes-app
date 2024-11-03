@@ -19,12 +19,6 @@ const {authenticationToken} = require("./utilities");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(
-//     cors({
-//         origin: "*",
-//         credentials: true, // if your frontend needs cookies or authentication tokens
-//     })
-// );
 const corsOptions = {
     origin: "https://notes-app-mu-olive.vercel.app",
     credentials: true,
@@ -40,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test",(req,res) => {
-    res.json({data:test});
+    res.json({"data":"test"});
 })
 //Create-Account
 app.post("/create-account", async (req, res) => {
