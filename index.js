@@ -25,8 +25,14 @@ app.use(express.urlencoded({ extended: true }));
 //         credentials: true, // if your frontend needs cookies or authentication tokens
 //     })
 // );
+const corsOptions = {
+    origin: ["http://localhost:5173", "https://notes-app-mu-olive.vercel.app"],
+    credentials: true,
+};
 
-app.use(cors());
+// Preflight request handling
+app.options("*", cors(corsOptions)); // Enable preflight for all routes
+app.use(cors(corsOptions)); // Enable CORS for all routes
 
 
 app.get("/", (req, res) => {
