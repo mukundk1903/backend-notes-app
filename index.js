@@ -19,12 +19,14 @@ const {authenticationToken} = require("./utilities");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-    cors({
-        origin: "*",
-        credentials: true, // if your frontend needs cookies or authentication tokens
-    })
-);
+// app.use(
+//     cors({
+//         origin: "*",
+//         credentials: true, // if your frontend needs cookies or authentication tokens
+//     })
+// );
+
+app.use(cors());
 
 
 app.get("/", (req, res) => {
@@ -242,7 +244,6 @@ app.put("/update-note-pinned/:noteId", authenticationToken, async (req,res) => {
     const {isPinned} = req.body;
     const {user} = req.user;
 
-    
     try{
         const note = await Note.findOne({_id:noteId,userId:user._id});
 
