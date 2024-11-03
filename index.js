@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 //     })
 // );
 const corsOptions = {
-    origin: ["http://localhost:5173", "https://notes-app-mu-olive.vercel.app"],
+    origin: "https://notes-app-mu-olive.vercel.app",
     credentials: true,
 };
 
