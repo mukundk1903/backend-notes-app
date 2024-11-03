@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
     cors({
-        origin: "https://notes-app-mu-olive.vercel.app",
+        origin: "*",
         credentials: true, // if your frontend needs cookies or authentication tokens
     })
 );
