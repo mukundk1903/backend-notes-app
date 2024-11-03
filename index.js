@@ -92,7 +92,7 @@ app.post("/login", async (req, res) => {
     const userInfo = await User.findOne({ email: email });
 
     if (!userInfo) {
-        return res.status(400).json({ message: "User not found" });
+        return res.status(400).json({ error:true, message: "User not found" });
     }
 
     if(userInfo.email == email && userInfo.password == password){
