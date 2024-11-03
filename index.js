@@ -9,22 +9,22 @@ const User = require("./models/user.model.js");
 const Note = require("./models/note.model.js")
 
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const app = express();
 
 const jwt = require("jsonwebtoken");
 const {authenticationToken} = require("./utilities");
-const { error } = require("console");
+// const { error } = require("console");
 
 //Add the body parser middleware to parse JSON and URL-encoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-    cors({
-        origin: "*",
-    })
-);
+// app.use(
+//     cors({
+//         origin: "*",
+//     })
+// );
 
 app.get("/", (req, res) => {
     res.json({ data: "hello" });
